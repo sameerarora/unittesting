@@ -21,7 +21,7 @@ class BowlingSpec extends FlatSpec with Matchers with BeforeAndAfterEach {
     bowlingGame.roll(5)
     bowlingGame.roll(5)
     bowlingGame.roll(10)
-    bowlingGame.computeScore() should equal(20)
+    bowlingGame computeScore() should equal(20)
   }
 
   "A Bowling Game " should "handle spare " in {
@@ -32,8 +32,31 @@ class BowlingSpec extends FlatSpec with Matchers with BeforeAndAfterEach {
     bowlingGame.computeScore() should equal(24)
   }
 
+  "Test case" should "handle " in {
+    bowlingGame.roll(4)
+    bowlingGame.roll(6)
+    bowlingGame.roll(10)
+    bowlingGame.roll(0)
+    bowlingGame.roll(10)
+    bowlingGame.roll(3)
+    bowlingGame.roll(4)
+    bowlingGame.roll(3)
+    bowlingGame.roll(1)
+    bowlingGame.roll(0)
+    bowlingGame.roll(5)
+    bowlingGame.roll(9)
+    bowlingGame.roll(0)
+    bowlingGame.roll(2)
+    bowlingGame.roll(1)
+    bowlingGame.roll(5)
+    bowlingGame.roll(2)
+    bowlingGame.roll(3)
+    bowlingGame.roll(2)
+    bowlingGame.computeScore() should equal(83)
+  }
+
   "A Bowling Game " should "score 300 in a perfect game" in {
-    rollMany(12, 10);
+    rollMany(12, 10)
     bowlingGame.computeScore() should equal(300)
   }
 
